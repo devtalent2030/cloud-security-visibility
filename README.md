@@ -1,4 +1,54 @@
-# Cloud Security Visibility Repository
+# 🌐 Cloud Security Visibility Repository  
+
+[![Terraform](https://img.shields.io/badge/IaC-Terraform-844FBA?logo=terraform)](https://www.terraform.io/)  
+[![AWS](https://img.shields.io/badge/Cloud-AWS-FF9900?logo=amazon-aws)](https://aws.amazon.com/)  
+[![Azure](https://img.shields.io/badge/Cloud-Azure-0078D4?logo=microsoft-azure)](https://azure.microsoft.com/)  
+[![GCP](https://img.shields.io/badge/Cloud-GCP-4285F4?logo=google-cloud)](https://cloud.google.com/)  
+[![Security](https://img.shields.io/badge/Focus-Security%20Ops-critical?logo=datadog)]()  
+
+---
+
+## 📊 High-Level Architecture  
+
+```mermaid
+flowchart LR
+    subgraph AWS
+        A1[Security Hub]
+        A2[GuardDuty]
+        A3[CloudTrail/CloudWatch Logs]
+        A4[AWS Config Aggregator]
+    end
+
+    subgraph Azure
+        B1[Azure Sentinel]
+        B2[Log Analytics]
+        B3[Security Center + Defender]
+        B4[Monitor Workbooks]
+    end
+
+    subgraph GCP
+        C1[Security Command Center]
+        C2[BigQuery Log Sinks]
+        C3[Event Threat Detection]
+        C4[Cloud Asset Inventory]
+    end
+
+    A1 --> Central[Centralized SOC View]
+    B1 --> Central
+    C1 --> Central
+
+    A2 --> Central
+    B2 --> Central
+    C2 --> Central
+
+    A3 --> Central
+    B3 --> Central
+    C3 --> Central
+
+    A4 --> Central
+    B4 --> Central
+    C4 --> Central
+
 
 ## Overview
 
